@@ -13,6 +13,8 @@
 		CF3EB30F1A5FA277008C3E6B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF3EB30E1A5FA277008C3E6B /* Images.xcassets */; };
 		CF3EB3121A5FA277008C3E6B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF3EB3101A5FA277008C3E6B /* LaunchScreen.xib */; };
 		CF3EB31E1A5FA277008C3E6B /* hogeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3EB31D1A5FA277008C3E6B /* hogeTests.swift */; };
+		CF8B00171A5FA4B70043F384 /* 1.6Mb.JPG in Resources */ = {isa = PBXBuildFile; fileRef = CF8B00161A5FA4B70043F384 /* 1.6Mb.JPG */; };
+		CFE711881A5FBA830042C868 /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = CFE711871A5FBA830042C868 /* readme.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		CF3EB3171A5FA277008C3E6B /* hogeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hogeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF3EB31C1A5FA277008C3E6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF3EB31D1A5FA277008C3E6B /* hogeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hogeTests.swift; sourceTree = "<group>"; };
+		CF8B00161A5FA4B70043F384 /* 1.6Mb.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.6Mb.JPG; sourceTree = "<group>"; };
+		CFE711871A5FBA830042C868 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,11 +82,13 @@
 			isa = PBXGroup;
 			children = (
 				CF3EB3071A5FA277008C3E6B /* AppDelegate.swift */,
+				CF8B00161A5FA4B70043F384 /* 1.6Mb.JPG */,
 				CF3EB3091A5FA277008C3E6B /* ViewController.swift */,
 				CF3EB30B1A5FA277008C3E6B /* Main.storyboard */,
 				CF3EB30E1A5FA277008C3E6B /* Images.xcassets */,
 				CF3EB3101A5FA277008C3E6B /* LaunchScreen.xib */,
 				CF3EB3051A5FA277008C3E6B /* Supporting Files */,
+				CFE711871A5FBA830042C868 /* readme.md */,
 			);
 			path = hoge;
 			sourceTree = "<group>";
@@ -161,6 +167,7 @@
 				TargetAttributes = {
 					CF3EB3011A5FA277008C3E6B = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 2GC96WDWAR;
 					};
 					CF3EB3161A5FA277008C3E6B = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -192,6 +199,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF8B00171A5FA4B70043F384 /* 1.6Mb.JPG in Resources */,
 				CF3EB30D1A5FA277008C3E6B /* Main.storyboard in Resources */,
 				CF3EB3121A5FA277008C3E6B /* LaunchScreen.xib in Resources */,
 				CF3EB30F1A5FA277008C3E6B /* Images.xcassets in Resources */,
@@ -213,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF3EB30A1A5FA277008C3E6B /* ViewController.swift in Sources */,
+				CFE711881A5FBA830042C868 /* readme.md in Sources */,
 				CF3EB3081A5FA277008C3E6B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,9 +345,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = hoge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -346,9 +358,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = hoge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -405,6 +420,7 @@
 				CF3EB3231A5FA277008C3E6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF3EB3241A5FA277008C3E6B /* Build configuration list for PBXNativeTarget "hogeTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +429,7 @@
 				CF3EB3261A5FA277008C3E6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
