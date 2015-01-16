@@ -16,16 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" minimumZoomScale="0.10000000000000001" maximumZoomScale="2" translatesAutoresizingMaskIntoConstraints="NO" id="NvZ-EX-cWx">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" minimumZoomScale="0.10000000000000001" maximumZoomScale="2" translatesAutoresizingMaskIntoConstraints="NO" id="NvZ-EX-cWx">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <subviews>
-                                    <imageView multipleTouchEnabled="YES" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1.6Mb.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="shE-Cs-lE7">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                        <variation key="heightClass=regular" fixedFrame="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
-                                        </variation>
-                                    </imageView>
-                                </subviews>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -54,7 +46,6 @@
                     </view>
                     <connections>
                         <outlet property="board" destination="NvZ-EX-cWx" id="YCA-Ra-xjJ"/>
-                        <outlet property="kama" destination="shE-Cs-lE7" id="ADx-kG-4dH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -62,7 +53,4 @@
             <point key="canvasLocation" x="456" y="178.5"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="1.6Mb.JPG" width="2448" height="2448"/>
-    </resources>
 </document>

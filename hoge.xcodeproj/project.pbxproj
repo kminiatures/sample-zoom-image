@@ -81,14 +81,14 @@
 		CF3EB3041A5FA277008C3E6B /* hoge */ = {
 			isa = PBXGroup;
 			children = (
-				CF3EB3071A5FA277008C3E6B /* AppDelegate.swift */,
-				CF8B00161A5FA4B70043F384 /* 1.6Mb.JPG */,
 				CF3EB3091A5FA277008C3E6B /* ViewController.swift */,
+				CF3EB3071A5FA277008C3E6B /* AppDelegate.swift */,
 				CF3EB30B1A5FA277008C3E6B /* Main.storyboard */,
 				CF3EB30E1A5FA277008C3E6B /* Images.xcassets */,
 				CF3EB3101A5FA277008C3E6B /* LaunchScreen.xib */,
 				CF3EB3051A5FA277008C3E6B /* Supporting Files */,
 				CFE711871A5FBA830042C868 /* readme.md */,
+				CF8B00161A5FA4B70043F384 /* 1.6Mb.JPG */,
 			);
 			path = hoge;
 			sourceTree = "<group>";

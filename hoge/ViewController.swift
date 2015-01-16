@@ -9,15 +9,28 @@
 import UIKit
 
 class ViewController: UIViewController,UIScrollViewDelegate {
-    @IBOutlet weak var kama: UIImageView!
     @IBOutlet weak var board: UIScrollView!
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        kama.frame.size = kama.image!.size // ImageView に画像のサイズを設定。画像を動的に取得するときのために。
-        board.contentSize = kama.frame.size // ScrollView に画像のサイズを設定
+        board.frame.size = UIScreen.mainScreen().bounds.size
+        
+        var img = UIImageView(image: UIImage(named: "1.6Mb.JPG"))
+        img.contentMode = UIViewContentMode.ScaleAspectFill
+        img.frame.size = board.frame.size
+        var scale:CGFloat = 1.0
+        //        scale = self.view.bounds.width / img.image!.size.width
+        // 画像の画面に対するスケール
+        //println(scale)
+        
+
+        //        img.frame = CGRectMake(0,0, i!.size.width * scale, i!.size.height * scale)
+        
+        println(img.frame)
+        println(img.image)
+
         board.delegate = self // board のメソッド実装先を自分にする
+        board.addSubview(img)
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,7 +41,7 @@ class ViewController: UIViewController,UIScrollViewDelegate {
     
     // MARK: UIScrollViewDelegate
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
-        return kama
+        return board.subviews[0] as UIImageView
     }
 
     func scrollViewDidEndZooming(scrollView: UIScrollView, withView view: UIView!, atScale scale: CGFloat) {
@@ -39,7 +52,10 @@ class ViewController: UIViewController,UIScrollViewDelegate {
             // UIView から UIImageView にダウンキャストする
             // UIView -> UIImageView ダウンキャスト
             // UIImageView -> UIView アップキャスト
-            let size = (i as UIImageView).image!.size
+//            let size = (i as UIImageView).image!.size
+            let size = (i as UIImageView).frame.size
+            // println(size)
+//            println(scale)
             scrollView.contentSize = CGSizeMake(size.width * scale, size.height  * scale);
         }
     }
