@@ -8,14 +8,30 @@
 
 import UIKit
 
-class ViewController: UIViewController,UIScrollViewDelegate {
+class ViewController: UIViewController,
+    UIScrollViewDelegate,
+    UIImagePickerControllerDelegate,
+    UINavigationControllerDelegate
+
+{
     @IBOutlet weak var board: UIScrollView!
+    
+    
+    /// 画像ファイルの保存先パスを生成します（ドキュメントフォルダ直下固定）。
+    var imagePath: String {
+        let doc = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        return doc.stringByAppendingPathComponent("img1.jpg")
+    }
+    
+    var img:UIImageView = UIImageView(image: UIImage(named: "1.6Mb.JPG"))
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         board.frame.size = UIScreen.mainScreen().bounds.size
         
-        var img = UIImageView(image: UIImage(named: "1.6Mb.JPG"))
+        //var img = UIImageView(image: UIImage(named: "1.6Mb.JPG"))
         img.contentMode = UIViewContentMode.ScaleAspectFill
         img.frame.size = board.frame.size
         var scale:CGFloat = 1.0
@@ -31,11 +47,25 @@ class ViewController: UIViewController,UIScrollViewDelegate {
 
         board.delegate = self // board のメソッド実装先を自分にする
         board.addSubview(img)
+        
+        UIApplication.sharedApplication().idleTimerDisabled = true
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let savedImage:UIImage? = UIImage(contentsOfFile: imagePath)
+        if(savedImage == nil){
+            openImagePicker()
+        }else{
+            img.image = savedImage
+        }
     }
     
     
@@ -59,6 +89,33 @@ class ViewController: UIViewController,UIScrollViewDelegate {
             scrollView.contentSize = CGSizeMake(size.width * scale, size.height  * scale);
         }
     }
+    
+    
+    func imagePickerController(
+        picker: UIImagePickerController,
+        didFinishPickingMediaWithInfo info: [NSObject : AnyObject]
+        ) {
+            if info[UIImagePickerControllerOriginalImage] != nil {
+                let image:UIImage = info[UIImagePickerControllerOriginalImage]  as UIImage
+                
+                let data = UIImageJPEGRepresentation(image, 0.9)
+                data.writeToFile(imagePath, atomically: true)
+                img.image = image
+                
+                println("save: \(imagePath)")
+            }
+            
+            // 閉じる
+            picker.dismissViewControllerAnimated(true, completion: nil);
+    }
 
+    // MARK: My Functions
+    func openImagePicker() {
+        let ipc:UIImagePickerController = UIImagePickerController();
+        ipc.delegate = self
+        ipc.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        self.presentViewController(ipc, animated:true, completion:nil)
+        
+    }
 }
 
