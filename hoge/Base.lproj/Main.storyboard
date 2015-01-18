@@ -16,13 +16,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" minimumZoomScale="0.10000000000000001" maximumZoomScale="2" translatesAutoresizingMaskIntoConstraints="NO" id="NvZ-EX-cWx">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" minimumZoomScale="0.10000000000000001" maximumZoomScale="2" translatesAutoresizingMaskIntoConstraints="NO" id="NvZ-EX-cWx">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cE-x4-YUY">
+                                <rect key="frame" x="289" y="558" width="22" height="22"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="add:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="JqB-3a-5lt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="0cE-x4-YUY" secondAttribute="centerX" id="0AC-4Z-9q5"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="NvZ-EX-cWx" secondAttribute="bottom" id="1R8-Dl-jDH"/>
+                            <constraint firstAttribute="centerY" secondItem="NvZ-EX-cWx" secondAttribute="centerY" id="Ehv-dZ-sSz"/>
+                            <constraint firstAttribute="centerX" secondItem="NvZ-EX-cWx" secondAttribute="centerX" id="JXY-g1-IFC"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="0cE-x4-YUY" secondAttribute="bottom" constant="20" id="YE7-Dz-QZr"/>
                             <constraint firstItem="NvZ-EX-cWx" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="cq9-Xn-l2D"/>
                             <constraint firstAttribute="trailing" secondItem="NvZ-EX-cWx" secondAttribute="trailing" id="lhS-6Y-wfo"/>
                             <constraint firstItem="NvZ-EX-cWx" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="opd-uY-Feu"/>

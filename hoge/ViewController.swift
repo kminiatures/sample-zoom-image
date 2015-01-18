@@ -22,6 +22,10 @@ class ViewController: UIViewController,
         let doc = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         return doc.stringByAppendingPathComponent("img1.jpg")
     }
+    @IBAction func add(sender: AnyObject) {
+        println("tap!")
+        openImagePicker()
+    }
     
     var img:UIImageView = UIImageView(image: UIImage(named: "1.6Mb.JPG"))
 
@@ -45,8 +49,10 @@ class ViewController: UIViewController,
         println(img.frame)
         println(img.image)
 
-        board.delegate = self // board のメソッド実装先を自分にする
         board.addSubview(img)
+        println("before set delegate")
+        board.delegate = self // board のメソッド実装先を自分にする
+        println("after set delegate")
         
         UIApplication.sharedApplication().idleTimerDisabled = true
 
@@ -71,7 +77,10 @@ class ViewController: UIViewController,
     
     // MARK: UIScrollViewDelegate
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
-        return board.subviews[0] as UIImageView
+        println("viewForZoomingInScrollView")
+        println(board.subviews[0])
+       // return board.subviews[0] as UIImageView
+        return img
     }
 
     func scrollViewDidEndZooming(scrollView: UIScrollView, withView view: UIView!, atScale scale: CGFloat) {
